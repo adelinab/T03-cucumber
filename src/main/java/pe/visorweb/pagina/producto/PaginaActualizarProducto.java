@@ -37,11 +37,22 @@ public class PaginaActualizarProducto extends PaginaBase {
 	}
 	
 	
-	public void guardar(String nombreproducto, String categoria, String precio) {
-		escribir(txtNombre,nombreproducto);
-		seleccionar(cboCategoria, categoria);
-		escribir(txtPrecio,precio);
+	public void clickBotonGuardar() {
 		click(btnGuardar);
+	}
+	
+
+	public void ingresarNombreProducto(String nombreproducto) {
+		escribir(txtNombre,nombreproducto);
+	}
+	
+	public void seleccionarCategoria(String categoria) {
+		seleccionar(cboCategoria, categoria);
+	}
+	
+	
+	public void ingresarPrecio(String precio) {
+		escribir(txtPrecio,precio);
 	}
 	
 	public String getMensaje() {

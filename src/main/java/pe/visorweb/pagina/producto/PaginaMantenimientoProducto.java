@@ -76,6 +76,15 @@ public class PaginaMantenimientoProducto extends PaginaBase{
 		click(btnSi);
 	}
 	
+	public void clickBotonEditar() {
+		click(btnActualizar);
+	}
+	
+
+	public void seleccionarProducto() {
+		click(productoSeleccionado);
+	}
+	
 	public void clickbtnFiltrar() {
 		click(btnFiltrar);
 		

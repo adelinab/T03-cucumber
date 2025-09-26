@@ -26,7 +26,7 @@ public class PaginaBase {
 	
 	protected void seleccionar(WebElement elemento, String texto) {
 		Select combo = new Select(elemento);
-		combo.selectByValue(texto);
+		combo.selectByVisibleText(texto.toUpperCase());
 	}
 	
 	protected void click(WebElement elemento) {

@@ -50,7 +50,7 @@ public class RegistrarProductoStep {
 	}
 	
 	
-	@And("registro el producto {string}")
+	@And("registro el producto {string} con la categoria {string} y con precio {string}")
 	public void registrarProducto(String nombreproducto, String categoria, String precio) {
 		paginaRegistrarProducto.guardar(nombreproducto, categoria, precio);
 	}

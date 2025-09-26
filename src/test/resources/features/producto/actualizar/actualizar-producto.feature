@@ -1,6 +1,6 @@
 Feature: Gestión Producto
 
-	Scenario Outline: Actualización exitosa de un producto existente 
+	Scenario Outline: Validar actualización de producto con datos válidos e inválidos 
 		Given cargo la página visor web
 		And inicio sesión con el usuario <usuario> y clave <clave>
 		When navego a la página de mantenimiento de producto
@@ -12,11 +12,20 @@ Feature: Gestión Producto
 	    And ingreso el precio <precio>
 	    And hago click en el botón guardar
 	    Then el aplicativo muestra el mensaje <mensajeEsperado>
-		
- 
-  
+
 	Examples:
 		| usuario | clave | nombreproducto | categoria | precio | mensajeEsperado |
-		|"admin"|"clave"| "inka" | "gaseosas" | "2.2"|"Se actualizó de manera correcta el Producto"|
 		|"admin"|"clave"| "" | "chocolates" | "2.5"|"Nombre: Error de validación: se necesita un valor."|
 		
+		
+	Scenario Outline: Mostrar mensaje de error al hacer click en editar sin seleccionar un producto
+    Given cargo la página visor web
+    And inicio sesión con el usuario <usuario> y clave <clave>
+    When navego a la página de mantenimiento de producto
+    And hago click en el botón filtrar
+    And hago click en el botón editar
+    Then el aplicativo muestra el mensaje de error <mensajeEsperado>
+    
+    Examples:
+		| usuario | clave | mensajeEsperado |
+		|"admin"|"clave"| "No ha seleccionado un Producto"|

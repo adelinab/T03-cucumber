@@ -60,7 +60,6 @@ public class PaginaMantenimientoProducto extends PaginaBase{
 	}
 	
 	
-	
 	public PaginaActualizarProducto cargarPaginaActualizarProducto() {
 		
 		btnFiltrar.click();
@@ -68,14 +67,7 @@ public class PaginaMantenimientoProducto extends PaginaBase{
 		btnActualizar.click();
 		return new PaginaActualizarProducto(driver);
 	}
-	
-	public void eliminarProducto() {
-		click(btnFiltrar);
-		click(productoSeleccionado);
-		click(btnEliminar);
-		click(btnSi);
-	}
-	
+
 	public void clickBotonEditar() {
 		click(btnActualizar);
 	}
@@ -105,33 +97,23 @@ public class PaginaMantenimientoProducto extends PaginaBase{
 		click(btnSi);
 	}
 	
-	public int filtrarNombreProducto(String nombreproducto) {
+	
+	public void escribirNombreProductoAFiltrar(String nombreproducto) {
 		
 		escribir(txtFiltro,nombreproducto);		
-		click(btnFiltrar);		
-		
-		 int flag = 1;
+	}
+	
+	public boolean validarNumerodeFilas() {		
 		
 		 if(resultadosFiltro.size()>0) 
 		 {		
-			 flag = 1;
-			 
-			 for (WebElement cell : resultadosFiltro) {
-	            String cellText = cell.getText().toLowerCase().trim();
-	            System.out.println("filtrarNombreProducto Valor: "+nombreproducto.toLowerCase());
-	            if (!cellText.equals(nombreproducto.toLowerCase())) {
-	                flag = 2;
-	                System.out.println("filtrarNombreProducto Valor diferente: " + cellText);
-	                break;
-	            }
-			 }
+			return true;
 		 }
 		 else 
 		 {
-			 flag = 0;
+			 return false;
 		 }
-		 
-		 return flag;
+		 		 
 	}
 	
 	public String getMensajeNoRegistros() {

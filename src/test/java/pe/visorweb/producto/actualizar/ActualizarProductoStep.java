@@ -95,4 +95,11 @@ public class ActualizarProductoStep {
 			.assertThat(paginaActualizarProducto.getMensaje())
 			.isEqualTo(mensaje);
 	}
+	
+	@Then("el aplicativo muestra el mensaje de error {string}")
+	public void getMensajePaginaMantenimientoProducto(String mensaje) {
+		Assertions
+			.assertThat(paginaMantenimientoProducto.getMensaje())
+			.isEqualTo(mensaje);
+	}
 }

@@ -16,7 +16,7 @@ Feature: Gestión Producto
 	Examples:
 		| usuario | clave | nombreproducto | categoria | precio | mensajeEsperado |
 		|"admin"|"clave"| "" | "chocolates" | "2.5"|"Nombre: Error de validación: se necesita un valor."|
-		
+		|"admin"|"clave"| "inka" | "gaseosas" | "2.2"|"Se actualizó de manera correcta el Producto"|
 		
 	Scenario Outline: Mostrar mensaje de error al hacer click en editar sin seleccionar un producto
     Given cargo la página visor web
